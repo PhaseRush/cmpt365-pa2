@@ -42,6 +42,7 @@ public class Q2 {
                 sEnd++;
             }
         }
+        output.append(tree.get(s));
         System.out.println(output);
         tree.forEach((k, v) -> System.out.println(v + "\t" + k));
     }
