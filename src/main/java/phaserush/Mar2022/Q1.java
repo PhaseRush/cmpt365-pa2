@@ -48,7 +48,7 @@ public class Q1 {
                 s = s + c;
             } else {
                 output.append(dict.get(s));
-                dict.put(s + c, dict.size());
+                dict.put(s + c, dict.size() + 1);
                 s = c;
             }
             sEnd++;
