@@ -23,7 +23,9 @@ public class Q1 {
         var sc = new Scanner(new File(Q1.class.getResource("/Mar2022/q1.txt").toURI()));
         var input = sc.nextLine();
         System.out.println("Entropy:\t" + calcEntropy(input));
-        System.out.println("Compressed:\t" + compress(input));
+        var output = compress(input);
+        System.out.println("Compressed:\t" + output);
+        System.out.println("Ratio: \t" + ((double)input.length()/output.length()));
         System.out.println("Dictionary:");
         dict.forEach((k, v) -> System.out.println(v + "\t" + k));
     }
@@ -48,7 +50,7 @@ public class Q1 {
                 s = s + c;
             } else {
                 output.append(dict.get(s));
-                dict.put(s + c, dict.size() + 1);
+                dict.put(s + c, dict.size());
                 s = c;
             }
             sEnd++;
